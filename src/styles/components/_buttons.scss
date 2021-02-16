@@ -1,0 +1,58 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+.btn {
+  padding: 9px 21px;
+
+  font-family: $font-roboto;
+  font-size: 17px;
+  font-weight: 500;
+
+  border: 0;
+  border-radius: 4px;
+
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+
+  @include on-event() {
+    text-decoration: none;
+  }
+}
+
+.btn-white {
+  @extend .btn;
+
+  color: $semi-black;
+
+  background-color: $white;
+}
+
+.btn-orange {
+  @extend .btn;
+
+  color: $white;
+
+  background-color: $orange;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+@include respond-to(md-up) {
+  .btn-white {
+    @include on-event {
+      color: $white;
+
+      background-color: $orange;
+    }
+  }
+  
+  .btn-orange {
+    @include on-event {
+      background-color: $semi-black;
+    }
+  }
+}

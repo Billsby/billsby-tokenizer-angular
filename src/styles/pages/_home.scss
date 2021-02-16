@@ -1,0 +1,153 @@
+.index {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .form-wrap,
+  .console-wrap {
+    width: 50%;
+  }
+
+  .form-wrap {
+    padding-top: 41px;
+  }
+
+  .form-label {
+    width: 28%;
+  }
+
+  .input-wrap,
+  .dual-form {
+    width: 68%;
+  }
+}
+
+.form-wrap {
+  form {
+    padding-left: 15px;
+    padding-right: 40px;
+  }
+
+  .reminder-wrap {
+    padding: 20px 17px 23px;
+    margin-bottom: 25px;
+
+    background-color: $gray;
+  }
+
+  span {
+    font-weight: 600;
+  }
+}
+
+.console-wrap {
+  background-color: $gray;
+
+  .console-header {
+    position: fixed;
+    
+    width: 100%;
+
+    background-color: $dark-gray;
+  }
+
+  .console-body {
+    padding: 20px 25px;
+    margin-top: 80px;
+    height: calc(100vh - 195.34px); //minus height of header , height of console header , padding to & bottom in console body
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $gray; 
+    }
+     
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $semi-black; 
+    }
+    
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: $black; 
+    }
+  }
+
+  .__json-pretty__ {
+    background-color: $gray;
+  }
+  
+  .__json-pretty__,
+  .__json-pretty__ .__json-string__,
+  .__json-pretty__ .__json-key__,
+  .__json-pretty__ .__json-value__,
+  .__json-pretty__ .__json-boolean__ {
+    opacity: 1;
+    color: $darkest-gray;
+  }
+
+  .t-title {
+    padding: 29px 25px 28px;
+    margin: 0;
+  }
+
+  p {
+    margin-top: 0;
+  }
+}
+
+@include respond-to(lg-up) {
+  .console-wrap {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  
+    height: calc(100vh - 75.34px);
+  }
+}
+
+@include respond-to(md-down) {
+  .index {
+    padding: 0 15px;
+
+    .form-wrap,
+    .console-wrap {
+      width: 100%;
+    }
+
+    .input-wrap,
+    .form-label  {
+      width: 100%;
+    }
+
+    .form-label {
+      margin-bottom: 9px;
+    }
+  }
+
+  .form-wrap form {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .console-wrap {
+    position: relative;
+
+    .console-header {
+      position: absolute;
+      top: 0;
+    }
+
+    .console-body {
+      padding-top: 100px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+  }
+}

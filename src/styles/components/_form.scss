@@ -1,0 +1,94 @@
+.form-container {
+  margin-bottom: 30px;
+}
+
+.form-container,
+.dual-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.form-input {
+  padding: 12px 0;
+  width: 100%;
+  
+  font-family: $font-roboto;
+  // font-size: 17px;
+  font-size: 13.3333px;
+  color: $semi-black;
+  text-indent: 17px;
+  
+  border: 0;
+  border-radius: 4px; 
+  box-shadow: 0px 0px 4px #00000029;
+  
+  &::placeholder {
+    font-size: 13.3333px;
+
+    opacity: 0.4;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  @include on-event {
+    box-shadow: 0px 0px 4px #00000029;
+    outline: none;
+  }
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.dual-form {
+  .form-input {
+    width: 47%;
+  }
+}
+
+.custom-input {
+  padding: 7px 0 9px;
+
+  iframe {
+    position: relative;
+    z-index: 2;
+  
+    padding-top: 7px;
+    height: 13px;
+  }
+}
+
+.custom-placeholder {
+  position: absolute;
+  top: 50%;
+  // left: 17px;
+  z-index: 1;
+
+  font-family: $font-roboto;
+  font-size: 17px;
+  color: $semi-black;
+  text-indent: 17px;
+
+  opacity: 0.4;
+  transform: translateY(-50%);
+}
+
+@include respond-to(lg) {
+  .form-label {
+    font-size: 15px;
+  }
+}
+
+@include respond-to(md-down) {
+  .form-container,
+  .dual-form {
+    flex-wrap: wrap;
+  }
+}
+

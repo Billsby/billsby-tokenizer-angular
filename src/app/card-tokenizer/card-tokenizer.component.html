@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="content">
+        <div class="form-wrap">
+            <form id="payment-form">
+                <input type="hidden" name="payment_method_token" id="payment_method_token">
+                <div class="form-container">
+                    <label class="form-label t-title" for="full_name">Name</label>
+                    <div class="input-wrap">
+                        <input id="full_name" class="form-input" name="full_name" type="text" placeholder="Full Name">
+                    </div>
+                </div>
+            
+                <div class="form-container">
+                    <label class="form-label t-title">Credit Card Number</label>
+                    <div class="input-wrap">
+                        <div id="billsby-number" class="form-input custom-input"></div>
+                    </div>
+                </div>
+                
+                <div class="form-container">
+                    <label class="form-label t-title" for="month">Expiration Date</label>
+                    <div class="input-wrap dual-form">
+                        <input id="month" class="form-input" name="month" type="text" maxlength="2" placeholder="XX">
+                        <input id="year" class="form-input" name="year" type="text" maxlength="4" placeholder="XXXX">
+                    </div>
+                </div>
+                
+                <div class="form-container">
+                    <label class="form-label t-title">CVV</label>
+                    <div class="input-wrap">
+                        <div id="billsby-cvv" class="form-input custom-input"></div>
+                    </div>
+                </div>
+                
+                <div class="reminder-wrap">
+                    <p class="t-text">For test accounts, use <span>4111111111111111</span> with any future dated expiry date and any three digit CVV. The tokenizer does not validate cards.</p>
+                </div>
+                <input id="submit-button" class="btn-orange w-100" type="submit" disabled="" value="Submit and tokenize">
+            </form>
+        </div>
+    </div>
+</div>

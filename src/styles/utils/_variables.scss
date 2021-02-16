@@ -1,0 +1,41 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+$font-roboto: 'Roboto';
+$font-roboto-slab: 'Roboto Slab';
+$font-chantal: 'Chantal';
+
+/// Regular font family
+/// @type List
+$text-font-stack: $font-roboto, 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+/// Copy text color
+/// @type Color
+$text-color: #252422 !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: #243F5C !default;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '../assets/' !default;
+
+// Other Variables
+
+$white: #fff;
+$black: #000;
+$semi-black: #252422;
+$darkest-gray: #707070;
+$dark-gray: #D3D3D3;
+$gray: #F5F5F5;
+$orange: #FE7F2D;
