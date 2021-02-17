@@ -1,27 +1,27 @@
 <div class="container">
     <div class="content">
         <div class="form-wrap">
-            <form id="payment-form">
+            <form id="payment-form"  (ngSubmit)="onSubmit()">
                 <input type="hidden" name="payment_method_token" id="payment_method_token">
                 <div class="form-container">
                     <label class="form-label t-title" for="full_name">Name</label>
                     <div class="input-wrap">
-                        <input id="full_name" class="form-input" name="full_name" type="text" placeholder="Full Name">
+                        <input id="full_name" class="form-input" name="full_name" type="text" placeholder="Full Name"  [(ngModel)]="paymentForm.full_name">
                     </div>
                 </div>
             
                 <div class="form-container">
                     <label class="form-label t-title">Credit Card Number</label>
                     <div class="input-wrap">
-                        <div id="billsby-number" class="form-input custom-input"></div>
+                      <div id="billsby-number" class="form-input custom-input"></div>
                     </div>
-                </div>
+                  </div>
                 
                 <div class="form-container">
                     <label class="form-label t-title" for="month">Expiration Date</label>
                     <div class="input-wrap dual-form">
-                        <input id="month" class="form-input" name="month" type="text" maxlength="2" placeholder="XX">
-                        <input id="year" class="form-input" name="year" type="text" maxlength="4" placeholder="XXXX">
+                        <input id="month" class="form-input" name="month" type="text" maxlength="2" placeholder="XX"  [(ngModel)]="paymentForm.month">
+                        <input id="year" class="form-input" name="year" type="text" maxlength="4" placeholder="XXXX"  [(ngModel)]="paymentForm.year">
                     </div>
                 </div>
                 
@@ -35,8 +35,46 @@
                 <div class="reminder-wrap">
                     <p class="t-text">For test accounts, use <span>4111111111111111</span> with any future dated expiry date and any three digit CVV. The tokenizer does not validate cards.</p>
                 </div>
-                <input id="submit-button" class="btn-orange w-100" type="submit" disabled="" value="Submit and tokenize">
+                <button id="submit-button" type="submit"  class="btn-orange w-100">Submit and tokenize</button>
+                
             </form>
         </div>
     </div>
+    <div class="console-wrap">
+        <div class="console-header">
+          <h6 class="t-title">Console </h6>
+        </div>
+        <div class="console-body">
+            
+            <pre [innerHTML]="payment_info2 | prettyprint"></pre>
+           <!--  {{payment_info2}} -->
+        </div>
+      </div>
 </div>
+<script>
+    /* alert(123);
+    const billsbyTokens = window.billsbyTokens;
+    billsbyTokens.init("billsby-number", "billsby-cvv");
+  
+    billsbyTokens.on("ready", function () {
+    const submitButton = document.getElementById("submit-button");
+    });
+
+    billsbyTokens.on("paymentMethod", function (token, pmData) {
+
+        console.log(token);
+        console.log(pmData)
+      });
+
+    function submitPaymentForm (evt){
+    evt.preventDefault();
+    alert(123);
+    const requiredFields = {};
+    
+    requiredFields["full_name"] = document.getElementById("full_name").value;
+    requiredFields["month"] = document.getElementById("month").value;
+    requiredFields["year"] = document.getElementById("year").value;
+
+    billsbyTokens.tokenizeCreditCard(requiredFields);
+  }; */
+</script>

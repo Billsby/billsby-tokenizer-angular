@@ -66,7 +66,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "card-tokenizer:build"
+            "browserTarget": "card-tokenizer:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -92,7 +93,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              
+              "src/styles/main.scss"
             ],
             "scripts": []
           }
