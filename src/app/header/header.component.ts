@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  toggleMenu = false;
+  toggleMenu = true;
   constructor(){ }
 
   handleToggleMenu(){
