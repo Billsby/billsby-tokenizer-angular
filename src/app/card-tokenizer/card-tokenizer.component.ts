@@ -15,25 +15,6 @@ export class CardTokenizerComponent implements OnInit {
   boboka=[];
   constructor() { 
     
-    if(this.billsbyTokens) {
-      this.billsbyTokens.init("billsby-number", "billsby-cvv");
-      this.billsbyTokens.on("ready", function () {
-        const submitButton = document.getElementById("submit-button");
-        
-      });
-      this.billsbyTokens.on("errors", function (errors: any) {
-          for (var i = 0; i < errors.length; i++) {
-            var error = errors[i];
-            console.log(error);
-          }
-        });
-      this.billsbyTokens.on("paymentMethod",  ( token: any, pmData: any) => {
-        this.set_payment_info = pmData;
-          console.log(token);
-          console.log(pmData);
-        });
-    
-    }
   }
   
   public paymentForm = {
@@ -63,8 +44,24 @@ export class CardTokenizerComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    
-   
+    if(this.billsbyTokens) {
+      this.billsbyTokens.init("billsby-number", "billsby-cvv");
+      this.billsbyTokens.on("ready", function () {
+        const submitButton = document.getElementById("submit-button");
+        
+      });
+      this.billsbyTokens.on("errors", function (errors: any) {
+          for (var i = 0; i < errors.length; i++) {
+            var error = errors[i];
+            console.log(error);
+          }
+        });
+      this.billsbyTokens.on("paymentMethod",  ( token: any, pmData: any) => {
+        this.set_payment_info = pmData;
+          console.log(token);
+          console.log(pmData);
+        });
+    }
   }
 
 }
