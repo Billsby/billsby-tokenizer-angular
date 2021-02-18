@@ -1,7 +1,7 @@
-<div class="container">
+<main class="container">
     <div class="content">
         <div class="form-wrap">
-            <form id="payment-form"  (ngSubmit)="onSubmit()">
+            <form id="payment-form" >
                 <input type="hidden" name="payment_method_token" id="payment_method_token">
                 <div class="form-container">
                     <label class="form-label t-title" for="full_name">Name</label>
@@ -35,7 +35,7 @@
                 <div class="reminder-wrap">
                     <p class="t-text">For test accounts, use <span>4111111111111111</span> with any future dated expiry date and any three digit CVV. The tokenizer does not validate cards.</p>
                 </div>
-                <button id="submit-button" type="submit"  class="btn-orange w-100">Submit and tokenize</button>
+                <button id="submit-button" type="submit" (click)="onSubmit()" class="btn-orange w-100">Submit and tokenize</button>
                 
             </form>
         </div>
@@ -45,36 +45,8 @@
           <h6 class="t-title">Console </h6>
         </div>
         <div class="console-body">
-            
-            <pre [innerHTML]="payment_info2 | prettyprint"></pre>
+            <pre><div id="json-pretty" [innerHtml]="get_payment_info"></div></pre>
            <!--  {{payment_info2}} -->
         </div>
       </div>
-</div>
-<script>
-    /* alert(123);
-    const billsbyTokens = window.billsbyTokens;
-    billsbyTokens.init("billsby-number", "billsby-cvv");
-  
-    billsbyTokens.on("ready", function () {
-    const submitButton = document.getElementById("submit-button");
-    });
-
-    billsbyTokens.on("paymentMethod", function (token, pmData) {
-
-        console.log(token);
-        console.log(pmData)
-      });
-
-    function submitPaymentForm (evt){
-    evt.preventDefault();
-    alert(123);
-    const requiredFields = {};
-    
-    requiredFields["full_name"] = document.getElementById("full_name").value;
-    requiredFields["month"] = document.getElementById("month").value;
-    requiredFields["year"] = document.getElementById("year").value;
-
-    billsbyTokens.tokenizeCreditCard(requiredFields);
-  }; */
-</script>
+    </main>
