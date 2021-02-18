@@ -5,7 +5,10 @@
           <img src='assets/images/logo.svg' class="logo" alt="Billsby" />
           <span class="t-logo">Billsby Card Tokenizer (Angular)</span>
         </a>
-        <button class='toggle-menu burger-close'>
+        <button [ngClass]="{
+          'toggle-menu burger-open': toggleMenu,
+          'toggle-menu burger-close': !toggleMenu
+      }" (click)="handleToggleMenu()">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
