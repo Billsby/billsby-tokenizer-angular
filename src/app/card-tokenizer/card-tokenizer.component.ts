@@ -13,7 +13,7 @@ export class CardTokenizerComponent implements OnInit {
   set_payment_info= '';
   get_payment_info= '';
   constructor() { 
-    console.log(this.billsbyTokens)
+    
   }
   
   public paymentForm = {
@@ -47,12 +47,11 @@ export class CardTokenizerComponent implements OnInit {
   }
   
   ngOnInit(): void {
-
-    // Billsby Tokenizer Library
     if(this.billsbyTokens) {
       this.billsbyTokens.init("billsby-number", "billsby-cvv");
-      this.billsbyTokens.on("ready",  () => {
-        this.isDisabled = false;
+      this.billsbyTokens.on("ready", function () {
+        const submitButton = document.getElementById("submit-button");
+        
       });
       this.billsbyTokens.on("errors", function (errors: any) {
           for (var i = 0; i < errors.length; i++) {
