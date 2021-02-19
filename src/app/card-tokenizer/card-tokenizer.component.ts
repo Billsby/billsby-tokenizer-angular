@@ -12,7 +12,6 @@ export class CardTokenizerComponent implements OnInit {
   billsbyTokens = (<any>window).billsbyTokens;
   set_payment_info= '';
   get_payment_info= '';
-  boboka=[];
   constructor() { 
     
   }
@@ -22,14 +21,18 @@ export class CardTokenizerComponent implements OnInit {
     month: null,
     year: null,
   };
+  public isDisabled = true;
 
   // Once clicked submit button
   onSubmit(): void{
+
+    // Get form data values (full_name, month, year)
     this.paymentForm = {
       full_name: this.paymentForm.full_name,
       month: this.paymentForm.month,
       year:  this.paymentForm.year
     };
+
     this.billsbyTokens.tokenizeCreditCard(this.paymentForm);
 
     // Will update data in view
@@ -44,11 +47,12 @@ export class CardTokenizerComponent implements OnInit {
   }
   
   ngOnInit(): void {
+
+    // Billsby Tokenizer Library
     if(this.billsbyTokens) {
       this.billsbyTokens.init("billsby-number", "billsby-cvv");
-      this.billsbyTokens.on("ready", function () {
-        const submitButton = document.getElementById("submit-button");
-        
+      this.billsbyTokens.on("ready",  () => {
+        this.isDisabled = false;
       });
       this.billsbyTokens.on("errors", function (errors: any) {
           for (var i = 0; i < errors.length; i++) {
@@ -63,5 +67,6 @@ export class CardTokenizerComponent implements OnInit {
         });
     }
   }
+
 
 }

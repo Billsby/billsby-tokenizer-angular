@@ -35,7 +35,7 @@
                 <div class="reminder-wrap">
                     <p class="t-text">For test accounts, use <span>4111111111111111</span> with any future dated expiry date and any three digit CVV. The tokenizer does not validate cards.</p>
                 </div>
-                <button id="submit-button" type="submit" (click)="onSubmit()" class="btn-orange w-100">Submit and tokenize</button>
+                <button id="submit-button" type="submit" (click)="onSubmit()" class="btn-orange w-100" [disabled]="isDisabled">Submit and tokenize</button>
                 
             </form>
         </div>
