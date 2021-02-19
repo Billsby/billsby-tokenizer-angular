@@ -13,7 +13,7 @@ export class CardTokenizerComponent implements OnInit {
   set_payment_info= '';
   get_payment_info= '';
   constructor() { 
-    
+    console.log(this.billsbyTokens)
   }
   
   public paymentForm = {
